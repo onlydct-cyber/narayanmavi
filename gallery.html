@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Shree Narayan Secondary School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f7f7;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+background:#0f766e;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1rem 2rem;
+flex-wrap:wrap;
+position:sticky;
+top:0;
+z-index:9999;
+}
+
+.logo{
+color:white;
+font-size:1.5rem;
+font-weight:600;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
+align-items:center;
+}
+
+nav ul li{
+position:relative;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+padding:0.6rem 0.9rem;
+border-radius:6px;
+transition:0.3s;
+display:block;
+}
+
+nav ul li a:hover,
+.active{
+background:#14b8a6;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#0f766e;
+min-width:180px;
+border-radius:8px;
+overflow:hidden;
+z-index:999;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.dropdown-menu li a{
+padding:0.8rem 1rem;
+}
+
+/* HERO */
+
+.hero{
+height:25vh;
+background:url('images/home-banner.jpg') center center/cover no-repeat;
+}
+
+/* GALLERY */
+
+.gallery-section{
+background:#e9f6f5;
+padding:4rem 0;
+}
+
+/* SLIDER FRAME */
+
+.slider-container{
+width:92%;
+max-width:1400px;
+margin:auto;
+position:relative;
+overflow:hidden;
+border-radius:25px;
+border:10px solid white;
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+background:white;
+}
+
+/* SLIDES */
+
+.slider{
+display:flex;
+transition:0.6s ease-in-out;
+}
+
+.slide{
+min-width:100%;
+position:relative;
+}
+
+.slide img{
+width:100%;
+height:80vh;
+object-fit:cover;
+display:block;
+image-rendering:auto;
+}
+
+/* CAPTION */
+
+.caption{
+position:absolute;
+bottom:0;
+width:100%;
+padding:20px;
+background:rgba(0,0,0,0.45);
+color:white;
+font-size:1.3rem;
+font-weight:500;
+text-align:center;
+backdrop-filter:blur(4px);
+}
+
+/* BUTTONS */
+
+.prev,
+.next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(15,118,110,0.85);
+color:white;
+border:none;
+font-size:2rem;
+width:60px;
+height:60px;
+cursor:pointer;
+border-radius:50%;
+z-index:100;
+transition:0.3s;
+}
+
+.prev:hover,
+.next:hover{
+background:#14b8a6;
+transform:translateY(-50%) scale(1.08);
+}
+
+.prev{
+left:20px;
+}
+
+.next{
+right:20px;
+}
+
+/* DOTS */
+
+.dots{
+text-align:center;
+margin-top:20px;
+}
+
+.dot{
+height:14px;
+width:14px;
+margin:0 5px;
+background:#bbb;
+border-radius:50%;
+display:inline-block;
+cursor:pointer;
+transition:0.3s;
+}
+
+.active-dot{
+background:#0f766e;
+transform:scale(1.2);
+}
+
+/* FOOTER */
+
+footer{
+background:#0b3d3a;
+color:white;
+text-align:center;
+padding:1rem;
+margin-top:3rem;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+align-items:flex-start;
+}
+
+nav ul{
+flex-direction:column;
+width:100%;
+margin-top:1rem;
+}
+
+.hero{
+height:28vh;
+}
+
+.slide img{
+height:35vh;
+}
+
+.caption{
+font-size:0.95rem;
+padding:12px;
+}
+
+.prev,
+.next{
+width:45px;
+height:45px;
+font-size:1.5rem;
+}
+
+.slider-container{
+width:96%;
+border-width:5px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+Shree Narayan Secondary School
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li class="dropdown">
+
+<a href="#">Board ▾</a>
+
+<ul class="dropdown-menu">
+<li><a href="Teacher.html">Teacher</a></li>
+<li><a href="SMC.html">SMC</a></li>
+<li><a href="PTA.html">PTA</a></li>
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<a href="#">Result ▾</a>
+
+<ul class="dropdown-menu">
+<li><a href="Grade1.html">Grade1</a></li>
+<li><a href="Grade2.html">Grade2</a></li>
+<li><a href="Grade3.html">Grade3</a></li>
+<li><a href="Grade4.html">Grade4</a></li>
+<li><a href="Grade5.html">Grade5</a></li>
+<li><a href="Grade6.html">Grade6</a></li>
+<li><a href="Grade7.html">Grade7</a></li>
+<li><a href="Grade8.html">Grade8</a></li>
+<li><a href="Grade9.html">Grade9</a></li>
+<li><a href="Grade10.html">Grade10</a></li>
+<li><a href="Grade11.html">Grade11</a></li>
+<li><a href="Grade12.html">Grade12</a></li>
+</ul>
+
+</li>
+
+<li><a href="gallery.html" class="active">Gallery</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero"></section>
+
+<!-- GALLERY -->
+
+<section class="gallery-section">
+
+<div class="slider-container">
+
+<button class="prev" onclick="moveSlide(-1)">❮</button>
+
+<div class="slider" id="slider">
+
+<div class="slide">
+<img src="images/image1.jpg">
+<div class="caption">Annual Program</div>
+</div>
+
+<div class="slide">
+<img src="images/image2.jpg">
+<div class="caption">Sports Week</div>
+</div>
+
+<div class="slide">
+<img src="images/image3.jpg">
+<div class="caption">School Assembly</div>
+</div>
+
+<div class="slide">
+<img src="images/image4.jpg">
+<div class="caption">Prize Distribution</div>
+</div>
+
+<div class="slide">
+<img src="images/image5.jpg">
+<div class="caption">Educational Tour</div>
+</div>
+
+<div class="slide">
+<img src="images/image6.jpg">
+<div class="caption">Science Exhibition</div>
+</div>
+
+<div class="slide">
+<img src="images/image7.jpg">
+<div class="caption">Student Activities</div>
+</div>
+
+<div class="slide">
+<img src="images/image8.jpg">
+<div class="caption">Classroom Activities</div>
+</div>
+
+<div class="slide">
+<img src="images/image9.jpg">
+<div class="caption">School Building</div>
+</div>
+
+<div class="slide">
+<img src="images/image10.jpg">
+<div class="caption">Cultural Program</div>
+</div>
+
+</div>
+
+<button class="next" onclick="moveSlide(1)">❯</button>
+
+</div>
+
+<!-- DOTS -->
+
+<div class="dots">
+<span class="dot active-dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+&copy; 2025 Shree Narayan Secondary School | All Rights Reserved
+</footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+let currentSlide = 0;
+
+const slider = document.getElementById('slider');
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+function updateSlider(){
+
+slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+dots.forEach(dot => dot.classList.remove('active-dot'));
+
+dots[currentSlide].classList.add('active-dot');
+
+}
+
+function moveSlide(direction){
+
+currentSlide += direction;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
+}
+
+if(currentSlide < 0){
+currentSlide = slides.length - 1;
+}
+
+updateSlider();
+
+}
+
+/* AUTO SLIDE */
+
+setInterval(() => {
+moveSlide(1);
+}, 4000);
+
+</script>
+
+</body>
+</html>

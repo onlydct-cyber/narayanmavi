@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notice Board | Shree Narayan Secondary School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f7f7;
+color:#222;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+background:#0f766e;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1rem 2rem;
+flex-wrap:wrap;
+position:sticky;
+top:0;
+z-index:9999;
+}
+
+.logo{
+color:white;
+font-size:1.5rem;
+font-weight:600;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
+align-items:center;
+}
+
+nav ul li{
+position:relative;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+padding:0.6rem 0.9rem;
+border-radius:6px;
+transition:0.3s;
+display:block;
+}
+
+nav ul li a:hover,
+.active{
+background:#14b8a6;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#0f766e;
+min-width:180px;
+border-radius:8px;
+overflow:hidden;
+z-index:999;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.dropdown-menu li a{
+padding:0.8rem 1rem;
+}
+
+/* HERO BANNER */
+
+.hero{
+width:100%;
+height:25vh;
+background-image:
+linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+url('images/home-banner.jpg');
+
+background-position:center center;
+background-repeat:no-repeat;
+background-size:100% 100%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+height:30vh;
+background-size:100% 100%;
+background-position:center;
+}
+
+}
+
+/* NOTICE SECTION */
+
+.notice-section{
+padding:5rem 7%;
+background:#e9f6f5;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:3rem;
+}
+
+.section-title h2{
+font-size:2.5rem;
+color:#0f766e;
+margin-bottom:10px;
+}
+
+.section-title p{
+color:#555;
+font-size:1rem;
+}
+
+/* NOTICE BOARD */
+
+.notice-board{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:2rem;
+}
+
+/* NOTICE CARD */
+
+.notice-card{
+background:white;
+padding:2rem;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+border-left:6px solid #0f766e;
+position:relative;
+overflow:hidden;
+}
+
+.notice-card:hover{
+transform:translateY(-8px);
+}
+
+.notice-date{
+display:inline-block;
+background:#0f766e;
+color:white;
+padding:8px 14px;
+border-radius:30px;
+font-size:0.9rem;
+margin-bottom:1rem;
+}
+
+.notice-card h3{
+color:#0b3d3a;
+margin-bottom:1rem;
+font-size:1.3rem;
+}
+
+.notice-card p{
+line-height:1.8;
+color:#555;
+margin-bottom:1.5rem;
+}
+
+/* BUTTON */
+
+.notice-btn{
+display:inline-block;
+padding:10px 18px;
+background:#0f766e;
+color:white;
+text-decoration:none;
+border-radius:8px;
+transition:0.3s;
+}
+
+.notice-btn:hover{
+background:#14b8a6;
+}
+
+/* MARQUEE */
+
+.marquee-section{
+background:#0f766e;
+color:white;
+padding:14px 0;
+font-size:1rem;
+font-weight:500;
+overflow:hidden;
+white-space:nowrap;
+}
+
+.marquee-content{
+display:inline-block;
+padding-left:100%;
+animation:marquee 20s linear infinite;
+}
+
+@keyframes marquee{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-100%);
+}
+
+}
+
+/* FOOTER */
+
+footer{
+background:#0b3d3a;
+color:white;
+text-align:center;
+padding:1rem;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+align-items:flex-start;
+}
+
+nav ul{
+flex-direction:column;
+width:100%;
+margin-top:1rem;
+}
+
+.hero{
+height:30vh;
+}
+
+.hero-content h1{
+font-size:2rem;
+}
+
+.hero-content p{
+font-size:0.95rem;
+}
+
+.notice-section{
+padding:3rem 5%;
+}
+
+.section-title h2{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+Shree Narayan Secondary School
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li class="dropdown">
+
+<a href="#">Board ▾</a>
+
+<ul class="dropdown-menu">
+<li><a href="Teacher.html">Teacher</a></li>
+<li><a href="SMC.html">SMC</a></li>
+<li><a href="PTA.html">PTA</a></li>
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<a href="#">Result ▾</a>
+
+<ul class="dropdown-menu">
+<li><a href="Grade1.html">Grade1</a></li>
+<li><a href="Grade2.html">Grade2</a></li>
+<li><a href="Grade3.html">Grade3</a></li>
+<li><a href="Grade4.html">Grade4</a></li>
+<li><a href="Grade5.html">Grade5</a></li>
+<li><a href="Grade6.html">Grade6</a></li>
+<li><a href="Grade7.html">Grade7</a></li>
+<li><a href="Grade8.html">Grade8</a></li>
+<li><a href="Grade9.html">Grade9</a></li>
+<li><a href="Grade10.html">Grade10</a></li>
+<li><a href="Grade11.html">Grade11</a></li>
+<li><a href="Grade12.html">Grade12</a></li>
+</ul>
+
+</li>
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="notice.html" class="active">Notice</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+
+
+</div>
+
+</section>
+
+<!-- MARQUEE -->
+
+<section class="marquee-section">
+
+<div class="marquee-content">
+📢 Grade 10 Result Published • Admission Open for Grade 11 • Annual Sports Program Next Week • Parents Meeting on Friday • SEE Preparation Classes Running
+</div>
+
+</section>
+
+<!-- NOTICE SECTION -->
+
+<section class="notice-section">
+
+<div class="section-title">
+
+<h2>Latest Notices</h2>
+
+<p>
+Stay updated with latest school notices and announcements
+</p>
+
+</div>
+
+<div class="notice-board">
+
+<!-- NOTICE 1 -->
+
+<div class="notice-card">
+
+<div class="notice-date">
+May 19, 2026
+</div>
+
+<h3>Grade 10 Result Published</h3>
+
+<p>
+The annual examination result of Grade 10 has been officially published. Students can check results from the result section.
+</p>
+
+<a href="#" class="notice-btn">
+Read More
+</a>
+
+</div>
+
+<!-- NOTICE 2 -->
+
+<div class="notice-card">
+
+<div class="notice-date">
+May 15, 2026
+</div>
+
+<h3>Admission Open for Grade 11</h3>
+
+<p>
+Admission is now open for Science, Management and Humanities streams for the academic session 2083.
+</p>
+
+<a href="#" class="notice-btn">
+Read More
+</a>
+
+</div>
+
+<!-- NOTICE 3 -->
+
+<div class="notice-card">
+
+<div class="notice-date">
+May 10, 2026
+</div>
+
+<h3>Annual Sports Week Program</h3>
+
+<p>
+The annual sports competition will begin from next Sunday. All students are requested to participate actively.
+</p>
+
+<a href="#" class="notice-btn">
+Read More
+</a>
+
+</div>
+
+<!-- NOTICE 4 -->
+
+<div class="notice-card">
+
+<div class="notice-date">
+May 05, 2026
+</div>
+
+<h3>Parents Meeting Notice</h3>
+
+<p>
+A parents interaction and progress discussion program will be held on Friday at the school premises.
+</p>
+
+<a href="#" class="notice-btn">
+Read More
+</a>
+
+</div>
+
+<!-- NOTICE 5 -->
+
+<div class="notice-card">
+
+<div class="notice-date">
+April 30, 2026
+</div>
+
+<h3>SEE Preparation Classes</h3>
+
+<p>
+Special preparation classes for SEE students are running daily from 7 AM at the school campus.
+</p>
+
+<a href="#" class="notice-btn">
+Read More
+</a>
+
+</div>
+
+<!-- NOTICE 6 -->
+
+<div class="notice-card">
+
+<div class="notice-date">
+April 25, 2026
+</div>
+
+<h3>Scholarship Examination Notice</h3>
+
+<p>
+Scholarship examination for deserving students will be conducted next month. Interested students can apply now.
+</p>
+
+<a href="#" class="notice-btn">
+Read More
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+&copy; 2025 Shree Narayan Secondary School | All Rights Reserved
+</footer>
+
+</body>
+</html>

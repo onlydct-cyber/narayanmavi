@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shree Narayan Secondary School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f7f7;
+  color: #222;
+}
+
+/* HEADER */
+header {
+  background: url('images/home-banner.jpg') center/cover no-repeat;
+  height: 25vh;
+}
+
+/* NAV */
+nav {
+  background: #0f766e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+nav .logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  transition: 0.3s;
+  display: block;
+}
+
+nav ul li a:hover {
+  background: #14b8a6;
+}
+
+.nav-search-btn {
+  background: #ffffff;
+  color: #0f766e;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #0f766e;
+  min-width: 180px;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  padding: 0.8rem 1rem;
+  border-radius: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* MAIN SECTION */
+.section {
+  padding: 3rem 2rem;
+  background: #e9f6f5;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.side-image {
+  width: 220px;
+  border-radius: 10px;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 850px;
+  text-align: center;
+}
+
+.text-content h2 {
+  margin-bottom: 1rem;
+  color: #0b3d3a;
+}
+
+/* EVENT */
+.highlights-section {
+  padding: 2rem;
+  background: #f0fbfa;
+}
+
+.highlights-section h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #0f766e;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+
+.carousel img {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.carousel img:hover {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  background: #0b3d3a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .side-image {
+    width: 180px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+<!-- POPUP AD -->
+
+<div id="popup-ad">
+
+<div class="popup-box">
+
+<span class="close-btn" onclick="closePopup()">&times;</span>
+
+<img src="images/ad.jpg" alt="School Notice">
+
+<div class="popup-content">
+
+<h2>Welcome To Shree Narayan Secondary School</h2>
+
+<p>
+Admission Open for Academic Session 2083
+</p>
+
+<a href="notice.html" class="popup-btn">
+View Notice
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<style>
+
+/* POPUP BACKGROUND */
+
+#popup-ad{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999999;
+animation:fadeIn 0.5s ease;
+}
+
+/* POPUP BOX */
+
+.popup-box{
+width:90%;
+max-width:650px;
+background:white;
+border-radius:18px;
+overflow:hidden;
+position:relative;
+box-shadow:0 10px 40px rgba(0,0,0,0.3);
+animation:popup 0.4s ease;
+}
+
+/* IMAGE */
+
+/* POPUP BOX */
+
+.popup-box{
+width:90%;
+max-width:700px;
+background:white;
+border-radius:18px;
+overflow:hidden;
+position:relative;
+box-shadow:0 10px 40px rgba(0,0,0,0.3);
+animation:popup 0.4s ease;
+}
+
+/* IMAGE */
+
+.popup-box img{
+width:100%;
+height:500px;
+object-fit:cover;
+display:block;
+}
+
+/* CONTENT */
+
+.popup-content{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:18px;
+text-align:center;
+background:rgba(0,0,0,0.45);
+color:white;
+backdrop-filter:blur(3px);
+}
+
+.popup-content h2{
+margin-bottom:8px;
+font-size:1.8rem;
+color:white;
+}
+
+.popup-content p{
+margin-bottom:15px;
+font-size:1rem;
+color:white;
+}
+
+/* BUTTON */
+
+.popup-btn{
+display:inline-block;
+padding:10px 22px;
+background:#0f766e;
+color:white;
+text-decoration:none;
+border-radius:8px;
+transition:0.3s;
+}
+
+.popup-btn:hover{
+background:#14b8a6;
+}
+
+/* BUTTON */
+
+.popup-btn{
+display:inline-block;
+padding:12px 25px;
+background:#0f766e;
+color:white;
+text-decoration:none;
+border-radius:8px;
+transition:0.3s;
+}
+
+.popup-btn:hover{
+background:#14b8a6;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn{
+position:absolute;
+top:10px;
+right:18px;
+font-size:2rem;
+color:white;
+cursor:pointer;
+font-weight:bold;
+z-index:10;
+}
+
+/* ANIMATION */
+
+@keyframes popup{
+from{
+transform:scale(0.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.popup-box img{
+height:220px;
+}
+
+.popup-content h2{
+font-size:1.4rem;
+}
+
+}
+
+</style>
+
+<script>
+
+function closePopup(){
+document.getElementById("popup-ad").style.display="none";
+}
+
+</script>
+<!-- NAV -->
+<nav>
+  <div class="logo">Shree Narayan Secondary School</div>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+
+    <li><a href="about.html">About</a></li>
+
+    <li class="dropdown">
+      <a href="#">Board ▾</a>
+
+      <ul class="dropdown-menu">
+        <li><a href="Teacher.html">Teacher</a></li>
+        <li><a href="SMC.html">SMC</a></li>
+        <li><a href="PTA.html">PTA</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+<a href="#">Result ▾</a>
+
+<ul class="dropdown-menu">
+<li><a href="Grade1.html">Grade1</a></li>
+<li><a href="Grade2.html">Grade2</a></li>
+<li><a href="Grade3.html">Grade3</a></li>
+<li><a href="Grade4.html">Grade4</a></li>
+<li><a href="Grade5.html">Grade5</a></li>
+<li><a href="Grade6.html">Grade6</a></li>
+<li><a href="Grade7.html">Grade7</a></li>
+<li><a href="Grade8.html">Grade8</a></li>
+<li><a href="Grade9.html">Grade9</a></li>
+<li><a href="Grade10.html">Grade10</a></li>
+<li><a href="Grade11.html">Grade11</a></li>
+<li><a href="Grade12.html">Grade12</a></li>
+</ul>
+
+</li>
+
+    <li><a href="gallery.html">Gallery</a></li>
+
+    <li><a href="contact.html">Contact</a></li>
+
+    <li><a href="Notice.html" class="nav-search-btn">Notice</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header></header>
+
+<!-- MAIN -->
+<section class="section">
+  <div class="content-wrapper">
+
+    <div style="text-align:center;">
+      <img src="images/president.png" class="side-image">
+      <p><strong>Prakash Rijal</strong><br>Principal<br>📞 9857623146</p>
+    </div>
+
+    <div class="text-content">
+      <h2>Welcome to Shree Narayan Secondary School</h2>
+
+      <p><center>
+        नेपालमा गुरुकुल शिक्षा पद्दतिबाट शुरु भएको शिक्षा प्रजातन्त्रको उदयसँगै अधिराज्यभर विद्यालय स्थापना हुने क्रममा बढ्न थाल्यो । सोही सिलसिलामा स्थापित यस श्री नारायण उच्च मा.वि.को ऐतिहासिक पृष्ठभूमिलाई केलाउँदा वि.सं. १९८९ मा भाषा पाठशालाको रुपमा विद्यालय स्थापना भएको पाइन्छ । त्यस क्रममा स्थानीय शिक्षाप्रेमीहरुबाट निजी जग्गामा छाप्रो बनाई पोखराबाट पण्डित श्री दुर्गादत्त पौडेललाई शिक्षकको रुपमा झिकाई पठनपाठन शुरु गरिएको पाइन्छ ।
+    समयको माग र आवश्यकता बमोजिम र यस क्षेत्रको चाहना अनुसार शिक्षाको विकास र विस्तार हुनुपर्ने भएतापनि शिक्षक एवं अन्य विविध कठिनाईका कारण वि.सं. २००४ सालदेखि २००८ सालसम्म उक्त भाषा पाठशाला बन्द रहेको कुरा विद्यालयको अभिलेखले देखाउँछ । यसरी चारवर्षसम्म निष्क्रिय रहेको पाठशालालाई पुनः यहाँका शिक्षाप्रेमीहरुले वि.सं. २००८ सालबाट निरन्तरता दिई आएको पाइन्छ । पं. खगराज आचार्यलाई शिक्षक नियुक्ति गरी पठनपाठन कार्यलाई निरन्तरता दिइएको देखिन्छ ।<BR>
+    यसैक्रममा वि.सं. २०१६ सालमा यस विद्यालयका संस्थापक स्व. अमृतप्रसाद जोशीको पहल कदमीमा श्री नारायण प्रा.वि.को रुपमा स्वीकृत प्राप्त गरी पठनपाठन शुरु भएको यो विद्यालय श्री नारायण मिडिल स्कूल हुँदै हाल उच्च मा.वि. को रुपमा हामी माझ रहेको छ । पं. खगराज आचार्यद्वारा वि.सं. २०२८ सालसम्म अध्यापन हुँदै आएको तत्कालीन निःशुल्क प्रा.वि. कार्यक्रम अन्तर्गतका प्र.अ. हिरालाल पुरी रहेको पाइन्छ भने वि.सं. २०२३ सालमा यस विद्यालयले मा.वि.को स्वीकृति लिई यस क्षेत्र वरपरका विद्यार्थीहरुलाई सहज रुपमा शिक्षा दिंदै आएकोमा विद्यार्थीको बढ्दो चाप अनुसार तत्कालीन सानो भवन, खेलकुद मैदानको अभावबाट उत्पन्न समस्यालाई यहाँका बुद्धिजीवि, व्यापारी, समाजसेवीहरुले जग्गाको व्यवस्था एवं आर्थिक संकलन गरी आवश्यक भवन निर्माण तथा खेलकुद मैदानको व्यवस्था गरेको पाइन्छ । विद्यालय स्थापना गर्नमा महत्वपूर्ण भूमिका निर्वाह गर्नुहुने यसका संस्थापक स्व. अमृतप्रसाद जोशीलाई सम्मान प्रदान गर्दै विद्यालयको शिलालेखमा नामाकरण समेत गरिएको देखिन्छ । यसरी गुरुकुल शिक्षा पद्दति भाषा पाठशालाबाट शुरु भएको शैक्षिक यात्रा आज नारायण उच्च मा.वि.को रुपमा सगर्व हामी माझ धौलागिरि अञ्चलमानै प्रसिद्धी कमाउन सफल भएको छ ।</center>
+      </p>
+    </div>
+
+    <div style="text-align:center;">
+      <img src="images/founder.png" class="side-image">
+      <p><strong>School Administration</strong><br>Management</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="highlights-section">
+  <h3>Event Highlights</h3>
+
+  <div class="carousel">
+    <img src="images/image1.jpg">
+    <img src="images/image2.jpg">
+    <img src="images/image3.jpg">
+    <img src="images/image4.jpg">
+    <img src="images/image5.jpg">
+    <img src="images/image6.jpg">
+    <img src="images/image7.jpg">
+    <img src="images/image8.jpg">
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Shree Narayan Secondary School
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMC Committee | Shree Narayan Secondary School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f4f7f7;
+  color:#222;
+}
+
+/* NAVBAR */
+nav{
+  background:#0f766e;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 2rem;
+  flex-wrap:wrap;
+}
+
+.logo{
+  color:white;
+  font-size:1.5rem;
+  font-weight:600;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+nav ul li{
+  position:relative;
+}
+
+nav ul li a{
+  color:white;
+  text-decoration:none;
+  padding:0.5rem 0.75rem;
+  border-radius:5px;
+  transition:0.3s;
+  display:block;
+}
+
+nav ul li a:hover,
+.active{
+  background:#14b8a6;
+}
+
+/* DROPDOWN */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#0f766e;
+  min-width:180px;
+  border-radius:6px;
+  overflow:hidden;
+  z-index:999;
+}
+
+.dropdown:hover .dropdown-menu{
+  display:block;
+}
+
+.dropdown-menu li a{
+  padding:0.8rem 1rem;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  background:url('images/home-banner.jpg') center/cover no-repeat;
+  height:25vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.hero-content h1{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+/* SECTION */
+.section{
+  padding:4rem 5%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:3rem;
+}
+
+.section-title h2{
+  font-size:2.5rem;
+  color:#0f766e;
+}
+
+/* PRESIDENT */
+.president-wrapper{
+  display:flex;
+  justify-content:center;
+  margin-bottom:3rem;
+}
+
+.president-card{
+  width:320px;
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.president-card:hover{
+  transform:translateY(-6px);
+}
+
+.president-card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+.president-info{
+  padding:1.5rem;
+}
+
+.president-info h3{
+  color:#0f766e;
+  margin-bottom:8px;
+}
+
+/* MEMBERS */
+.member-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+}
+
+.member-card{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.member-card:hover{
+  transform:translateY(-6px);
+}
+
+.member-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+.member-info{
+  padding:1.2rem;
+}
+
+.member-info h3{
+  color:#0f766e;
+  margin-bottom:8px;
+}
+
+.member-info p{
+  color:#555;
+  margin-bottom:5px;
+}
+
+/* FOOTER */
+footer{
+  background:#0b3d3a;
+  color:white;
+  text-align:center;
+  padding:1rem;
+  margin-top:3rem;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.member-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+nav ul{
+  flex-direction:column;
+  width:100%;
+  margin-top:1rem;
+}
+
+.hero{
+  height:250px;
+}
+
+.hero-content h1{
+  font-size:2rem;
+}
+
+.member-grid{
+  grid-template-columns:1fr;
+}
+
+.president-card{
+  width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+<div class="logo">Shree Narayan Secondary School</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li class="dropdown">
+
+<a href="#" class="active">Board ▾</a>
+
+<ul class="dropdown-menu">
+<li><a href="teacher.html">Teacher</a></li>
+<li><a href="smc.html" class="active">SMC</a></li>
+<li><a href="pta.html">PTA</a></li>
+</ul>
+
+</li>
+
+<li><a href="result.html">Result</a></li>
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+
+
+</section>
+
+<!-- SECTION -->
+<section class="section">
+
+<div class="section-title">
+<h2>SMC Committee Members</h2>
+</div>
+
+<!-- PRESIDENT -->
+<div class="president-wrapper">
+
+<div class="president-card">
+
+<img src="images/president.jpg">
+
+<div class="president-info">
+<h3>President Name</h3>
+<p>SMC President</p>
+<p>📞 9800000000</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- MEMBERS -->
+<div class="member-grid">
+
+<!-- MEMBER 1 -->
+<div class="member-card">
+<img src="images/member1.jpg">
+<div class="member-info">
+<h3>Member Name 1</h3>
+<p>Committee Member</p>
+<p>📞 9800000001</p>
+</div>
+</div>
+
+<!-- MEMBER 2 -->
+<div class="member-card">
+<img src="images/member2.jpg">
+<div class="member-info">
+<h3>Member Name 2</h3>
+<p>Committee Member</p>
+<p>📞 9800000002</p>
+</div>
+</div>
+
+<!-- MEMBER 3 -->
+<div class="member-card">
+<img src="images/member3.jpg">
+<div class="member-info">
+<h3>Member Name 3</h3>
+<p>Committee Member</p>
+<p>📞 9800000003</p>
+</div>
+</div>
+
+<!-- MEMBER 4 -->
+<div class="member-card">
+<img src="images/member4.jpg">
+<div class="member-info">
+<h3>Member Name 4</h3>
+<p>Committee Member</p>
+<p>📞 9800000004</p>
+</div>
+</div>
+
+<!-- MEMBER 5 -->
+<div class="member-card">
+<img src="images/member5.jpg">
+<div class="member-info">
+<h3>Member Name 5</h3>
+<p>Committee Member</p>
+<p>📞 9800000005</p>
+</div>
+</div>
+
+<!-- MEMBER 6 -->
+<div class="member-card">
+<img src="images/member6.jpg">
+<div class="member-info">
+<h3>Member Name 6</h3>
+<p>Committee Member</p>
+<p>📞 9800000006</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+&copy; 2025 Shree Narayan Secondary School
+</footer>
+
+</body>
+</html>

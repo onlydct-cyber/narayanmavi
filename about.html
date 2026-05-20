@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Shree Narayan Secondary School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f4f7f7;
+  color:#222;
+}
+
+/* NAVBAR */
+nav{
+  background:#0f766e;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 2rem;
+  flex-wrap:wrap;
+  position:relative;
+}
+
+.logo{
+  color:white;
+  font-size:1.5rem;
+  font-weight:600;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+nav ul li{
+  position:relative;
+}
+
+nav ul li a{
+  color:white;
+  text-decoration:none;
+  padding:0.5rem 0.75rem;
+  border-radius:5px;
+  transition:0.3s;
+  display:block;
+}
+
+nav ul li a:hover,
+.active{
+  background:#14b8a6;
+}
+
+.nav-search-btn{
+  background:#fff;
+  color:#0f766e;
+  font-weight:600;
+}
+
+/* DROPDOWN */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#0f766e;
+  min-width:180px;
+  border-radius:6px;
+  overflow:hidden;
+  z-index:999;
+}
+
+.dropdown:hover .dropdown-menu{
+  display:block;
+}
+
+.dropdown-menu li{
+  width:100%;
+}
+
+.dropdown-menu li a{
+  padding:0.8rem 1rem;
+  border-radius:0;
+}
+
+/* HERO BANNER */
+.hero{
+  position:relative;
+  background: url('images/home-banner.jpg') center/cover no-repeat;
+  height: 25vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.hero-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:white;
+  padding:20px;
+  max-width:900px;
+}
+
+.hero-content h1{
+  font-size:52px;
+  margin-bottom:15px;
+  font-weight:700;
+}
+
+.hero-content p{
+  font-size:20px;
+  line-height:1.8;
+}
+
+/* SECTION */
+.section{
+  padding:4rem 7%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:3rem;
+}
+
+.section-title h2{
+  font-size:2.3rem;
+  color:#0f766e;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#555;
+}
+
+/* ABOUT */
+.about-container{
+  display:flex;
+  gap:3rem;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.about-image{
+  flex:1;
+  min-width:300px;
+}
+
+.about-image img{
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-text{
+  flex:1;
+  min-width:300px;
+}
+
+.about-text h3{
+  color:#0b3d3a;
+  margin-bottom:1rem;
+  font-size:2rem;
+}
+
+.about-text p{
+  line-height:1.9;
+  margin-bottom:1rem;
+  text-align:justify;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+  margin-top:3rem;
+}
+
+.card{
+  background:white;
+  padding:2rem;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card h3{
+  color:#0f766e;
+  margin-bottom:1rem;
+}
+
+/* PRINCIPAL */
+.principal-section{
+  background:#e9f6f5;
+}
+
+.principal-container{
+  display:flex;
+  gap:3rem;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.principal-image{
+  flex:1;
+  min-width:250px;
+  text-align:center;
+}
+
+.principal-image img{
+  width:260px;
+  border-radius:12px;
+}
+
+.principal-message{
+  flex:2;
+  min-width:300px;
+}
+
+.principal-message h2{
+  color:#0f766e;
+  margin-bottom:1rem;
+}
+
+.principal-message p{
+  line-height:1.9;
+  text-align:justify;
+}
+
+/* GALLERY */
+.gallery-section{
+  background:#f0fbfa;
+  padding:4rem 2rem;
+}
+
+.gallery-section h2{
+  text-align:center;
+  color:#0f766e;
+  margin-bottom:2rem;
+  font-size:2.2rem;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1.5rem;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.03);
+}
+
+/* FOOTER */
+footer{
+  background:#0b3d3a;
+  color:white;
+  text-align:center;
+  padding:1rem;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+nav{
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+nav ul{
+  flex-direction:column;
+  width:100%;
+  margin-top:1rem;
+}
+
+nav ul li{
+  width:100%;
+}
+
+nav ul li a{
+  width:100%;
+}
+
+.dropdown-menu{
+  position:static;
+  width:100%;
+  margin-top:5px;
+}
+
+.hero{
+  height:300px;
+}
+
+.hero-content h1{
+  font-size:34px;
+}
+
+.hero-content p{
+  font-size:15px;
+  line-height:1.6;
+}
+
+.section{
+  padding:3rem 5%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+<div class="logo">Shree Narayan Secondary School</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html" class="active">About</a></li>
+
+<li class="dropdown">
+<a href="#">Board ▾</a>
+
+<ul class="dropdown-menu">
+<li><a href="teacher.html">Teacher</a></li>
+<li><a href="smc.html">SMC</a></li>
+<li><a href="pta.html">PTA</a></li>
+</ul>
+
+</li>
+
+<li class="dropdown">
+<a href="#">Result ▾</a>
+
+<ul class="dropdown-menu">
+<li><a href="Grade1.html">Grade1</a></li>
+<li><a href="Grade2.html">Grade2</a></li>
+<li><a href="Grade3.html">Grade3</a></li>
+<li><a href="Grade4.html">Grade4</a></li>
+<li><a href="Grade5.html">Grade5</a></li>
+<li><a href="Grade6.html">Grade6</a></li>
+<li><a href="Grade7.html">Grade7</a></li>
+<li><a href="Grade8.html">Grade8</a></li>
+<li><a href="Grade9.html">Grade9</a></li>
+<li><a href="Grade10.html">Grade10</a></li>
+<li><a href="Grade11.html">Grade11</a></li>
+<li><a href="Grade12.html">Grade12</a></li>
+</ul>
+
+</li>
+
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+<li><a href="Notice.html" class="nav-search-btn">Notice</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO BANNER -->
+<section class="hero">
+
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+
+<div class="section-title">
+<h2>Historical Background</h2>
+<p>Educational Excellence Since Establishment</p>
+</div>
+
+<div class="about-container">
+
+<div class="about-image">
+<img src="images/image1.jpg" alt="School Image">
+</div>
+
+<div class="about-text">
+
+<h3>Shree Narayan Secondary School</h3>
+
+<p>
+नेपालको गुरुकुल शिक्षा प्रणालीसँग सम्बन्धित रहेको छ। प्रजातन्त्रको उदयसँगै विद्यालय स्थापना हुने क्रममा वि.सं. १९८९ सालमा भाषा पाठशालाका रूपमा सुरु भएको यो विद्यालय वि.सं. २०१६ सालमा औपचारिक रूपमा स्थापना भई आज माध्यमिक विद्यालयका रूपमा विकसित भएको छ।
+<p>
+वि.सं. २००४–२००८ सम्म केही समय विद्यालय बन्द भए पनि पुनः सञ्चालन भई शैक्षिक यात्रालाई निरन्तरता दिइयो। स्थानीय समाजसेवी, अभिभावक, शिक्षक तथा शिक्षाप्रेमी व्यक्तित्वहरूको योगदानले विद्यालयलाई जिल्लाकै उत्कृष्ट शैक्षिक संस्थाका रूपमा स्थापित गरेको छ।
+<p>
+हाल विद्यालयमा कक्षा १ देखि १२ सम्म करिब १२०० विद्यार्थी अध्ययनरत छन्। कक्षा ११–१२ मा विज्ञान, व्यवस्थापन तथा शिक्षा संकायमा अध्ययनको व्यवस्था रहेको छ। विद्यालयले आधुनिक शिक्षण प्रणाली, कम्प्युटर शिक्षा, अतिरिक्त क्रियाकलाप तथा नैतिक शिक्षालाई विशेष प्राथमिकता दिँदै आएको छ।
+</p>
+
+</div>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Our Mission</h3>
+<p>विद्यार्थीहरूलाई गुणस्तरीय, नैतिक तथा व्यवहारिक शिक्षा प्रदान गरी सक्षम नागरिक बनाउनु।</p>
+</div>
+
+<div class="card">
+<h3>Our Vision</h3>
+<p>प्रविधिमैत्री र प्रतिस्पर्धात्मक शिक्षा प्रणालीमार्फत राष्ट्रिय तथा अन्तर्राष्ट्रिय स्तरमा योग्य जनशक्ति उत्पादन गर्नु।</p>
+</div>
+
+<div class="card">
+<h3>Our Goal</h3>
+<p>अनुशासित, जिम्मेवार र सृजनशील विद्यार्थी उत्पादन गर्दै समाजमा सकारात्मक परिवर्तन ल्याउनु।</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRINCIPAL -->
+<section class="section principal-section">
+
+<div class="principal-container">
+
+<div class="principal-image">
+<img src="images/president.png" alt="Principal">
+<h3 style="margin-top:15px;">Prakash Rijal</h3>
+<p>Principal</p><p>9857623146</p>
+</div>
+
+<div class="principal-message">
+
+<h2>Message From Principal</h2>
+
+<p>
+श्री नारायण माध्यमिक विद्यालय परिवारको तर्फबाट यहाँहरू सबैमा हार्दिक स्वागत व्यक्त गर्दछु। शिक्षा नै राष्ट्र विकासको मुख्य आधार हो भन्ने मान्यताका साथ हाम्रो विद्यालयले गुणस्तरीय, व्यवहारिक तथा आधुनिक शिक्षामार्फत विद्यार्थीहरूको उज्ज्वल भविष्य निर्माणमा निरन्तर प्रयास गर्दै आएको छ।
+<p>
+विद्यालयले शैक्षिक उत्कृष्टता, अनुशासन, नैतिक मूल्य तथा सिर्जनशीलतालाई विशेष प्राथमिकतामा राख्दै विद्यार्थीहरूको सर्वाङ्गीण विकासमा जोड दिएको छ। दक्ष तथा अनुभवी शिक्षकहरू, अभिभावकहरूको सहयोग र विद्यार्थीहरूको मेहनतका कारण विद्यालयले शैक्षिक क्षेत्रमा उल्लेखनीय सफलता हासिल गर्दै आएको छ।
+<p>
+विद्यार्थी, अभिभावक, शिक्षक तथा समुदायबीचको आपसी सहकार्य र विश्वासबाट विद्यालयलाई अझ उत्कृष्ट शैक्षिक केन्द्रका रूपमा विकास गर्ने हाम्रो लक्ष्य रहेको छ। आगामी दिनहरूमा पनि आधुनिक प्रविधिमैत्री शिक्षा, अतिरिक्त क्रियाकलाप तथा जीवनोपयोगी शिक्षामार्फत सक्षम, अनुशासित र जिम्मेवार नागरिक उत्पादन गर्न विद्यालय प्रतिबद्ध रहनेछ।
+<p>
+अन्त्यमा, विद्यालयप्रति यहाँहरूले देखाउनुभएको विश्वास, सहयोग र सद्भावका लागि हार्दिक धन्यवाद व्यक्त गर्दछु।</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+&copy; 2025 Shree Narayan Secondary School | All Rights Reserved
+</footer>
+
+</body>
+</html>

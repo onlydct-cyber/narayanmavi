@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | Shree Narayan Secondary School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f7f7;
+overflow-x:hidden;
+color:#222;
+}
+
+/* NAVBAR */
+
+nav{
+background:#0f766e;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1rem 2rem;
+flex-wrap:wrap;
+position:sticky;
+top:0;
+z-index:9999;
+}
+
+.logo{
+color:white;
+font-size:1.5rem;
+font-weight:600;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
+align-items:center;
+}
+
+nav ul li{
+position:relative;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+padding:0.6rem 0.9rem;
+border-radius:6px;
+transition:0.3s;
+display:block;
+}
+
+nav ul li a:hover,
+.active{
+background:#14b8a6;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#0f766e;
+min-width:180px;
+border-radius:8px;
+overflow:hidden;
+z-index:999;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.dropdown-menu li a{
+padding:0.8rem 1rem;
+}
+
+.hero{
+width:100%;
+height:25vh;
+background-image:url('images/home-banner.jpg');
+background-position:center center;
+background-repeat:no-repeat;
+background-size:cover;
+display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+height:28vh;
+background-size:cover;
+background-position:center;
+}
+
+}
+/* CONTACT SECTION */
+
+.contact-section{
+padding:5rem 7%;
+background:#e9f6f5;
+}
+
+.contact-wrapper{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:3rem;
+align-items:start;
+}
+
+/* CONTACT INFO */
+
+.contact-info{
+background:white;
+padding:2.5rem;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.contact-info h2{
+color:#0f766e;
+margin-bottom:1.5rem;
+font-size:2rem;
+}
+
+.info-box{
+margin-bottom:1.5rem;
+padding:1rem;
+background:#f4f7f7;
+border-radius:12px;
+}
+
+.info-box h3{
+color:#0f766e;
+margin-bottom:8px;
+font-size:1.1rem;
+}
+
+.info-box p{
+line-height:1.7;
+}
+
+/* FORM */
+
+.contact-form{
+background:white;
+padding:2.5rem;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.contact-form h2{
+color:#0f766e;
+margin-bottom:1.5rem;
+font-size:2rem;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:14px;
+margin-bottom:1rem;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:1rem;
+outline:none;
+}
+
+.contact-form textarea{
+height:140px;
+resize:none;
+}
+
+.contact-form button{
+background:#0f766e;
+color:white;
+border:none;
+padding:14px 30px;
+border-radius:10px;
+font-size:1rem;
+cursor:pointer;
+transition:0.3s;
+}
+
+.contact-form button:hover{
+background:#14b8a6;
+}
+
+/* MAP */
+
+.map-section{
+padding:0 7% 5rem;
+background:#e9f6f5;
+}
+
+.map-container{
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.map-container iframe{
+width:100%;
+height:450px;
+border:0;
+}
+
+/* FOOTER */
+
+footer{
+background:#0b3d3a;
+color:white;
+text-align:center;
+padding:1rem;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+align-items:flex-start;
+}
+
+nav ul{
+flex-direction:column;
+width:100%;
+margin-top:1rem;
+}
+
+.hero{
+height:30vh;
+}
+
+.hero-content h1{
+font-size:2rem;
+}
+
+.hero-content p{
+font-size:0.95rem;
+}
+
+.contact-wrapper{
+grid-template-columns:1fr;
+}
+
+.contact-section{
+padding:3rem 5%;
+}
+
+.map-section{
+padding:0 5% 3rem;
+}
+
+.map-container iframe{
+height:300px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+Shree Narayan Secondary School
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li class="dropdown">
+
+<a href="#">Board ▾</a>
+
+<ul class="dropdown-menu">
+<li><a href="Teacher.html">Teacher</a></li>
+<li><a href="SMC.html">SMC</a></li>
+<li><a href="PTA.html">PTA</a></li>
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<a href="#">Result ▾</a>
+
+<ul class="dropdown-menu">
+<li><a href="Grade1.html">Grade1</a></li>
+<li><a href="Grade2.html">Grade2</a></li>
+<li><a href="Grade3.html">Grade3</a></li>
+<li><a href="Grade4.html">Grade4</a></li>
+<li><a href="Grade5.html">Grade5</a></li>
+<li><a href="Grade6.html">Grade6</a></li>
+<li><a href="Grade7.html">Grade7</a></li>
+<li><a href="Grade8.html">Grade8</a></li>
+<li><a href="Grade9.html">Grade9</a></li>
+<li><a href="Grade10.html">Grade10</a></li>
+<li><a href="Grade11.html">Grade11</a></li>
+<li><a href="Grade12.html">Grade12</a></li>
+</ul>
+
+</li>
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="contact.html" class="active">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section">
+
+<div class="contact-wrapper">
+
+<!-- CONTACT INFO -->
+
+<div class="contact-info">
+
+<h2>School Contact Details</h2>
+
+<div class="info-box">
+<h3>📍 Address</h3>
+<p>
+Kushma Municipality - 4, Parbat<br>
+Gandaki Province, Nepal
+</p>
+</div>
+
+<div class="info-box">
+<h3>📞 Phone Number</h3>
+<p>
+9857623146<br>
+067-420146
+</p>
+</div>
+
+<div class="info-box">
+<h3>📧 Email Address</h3>
+<p>
+infonarayanscl@gmail.com
+</p>
+</div>
+
+<div class="info-box">
+<h3>🕘 Office Time</h3>
+<p>
+Monday - Friday<br>
+09:00 AM - 5:00 PM
+</p>
+</div>
+
+</div>
+
+<!-- CONTACT FORM -->
+
+<div class="contact-form">
+
+<h2>Send Message</h2>
+
+<form>
+
+<input type="text" placeholder="Your Full Name" required>
+
+<input type="email" placeholder="Your Email Address" required>
+
+<input type="text" placeholder="Subject" required>
+
+<textarea placeholder="Write Your Message Here..." required></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GOOGLE MAP -->
+
+<section class="map-section">
+
+<div class="map-container">
+
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.495014550142!2d83.67500477527336!3d28.222651275891057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995e6cab3e64681%3A0xe5ecda5e81398a0b!2sShree%20Narayan%20Secondary%20School!5e0!3m2!1sen!2snp!4v1779188405473!5m2!1sen!2snp"
+width="100%"
+height="450"
+style="border:0;"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+&copy; 2025 Shree Narayan Secondary School | All Rights Reserved
+</footer>
+
+</body>
+</html>
